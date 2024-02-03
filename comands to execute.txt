@@ -1,0 +1,22 @@
+Δημιουργήστε τον socket client με την
+gcc -o socket_client socket_client.c
+
+Μετά δημιουργήστε τον socket server/rpc client με την
+
+gcc -o rpc_client rpc_client.c calc_clnt.c calc_xdr.c
+
+και τον rpc server με την
+gcc -o rpc_server rpc_server.c calc_svc.c calc_xdr.c
+
+Ανοίξτε 3 διαφορετικά παράθυρα/shell στην μηχανή σας
+και τοποθετήστε τα το ένα δίπλα στο άλλο.
+
+Στο πιο "δεξί" ξεκινήστε τον rpc server με
+./rpc_server
+
+Στο "μεσαίο" ξεκινήστε τον socket server / rpc client με
+./rpc_client
+
+Στο πιο αριστερό τρέξτε πολλές φορές τον socket client, π.χ.
+./socket_client 124 1298 2 (πολλαπλασιασμός)
+./socket_client 1238899 23466 1 (πρόσθεση)
